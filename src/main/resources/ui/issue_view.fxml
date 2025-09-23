@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.oogle.digitalid.ui.IssueController"
+            prefWidth="960" prefHeight="640" styleClass="root">
+    <top>
+        <HBox spacing="12" styleClass="topbar">
+            <Label text="Digital ID Studio" styleClass="title"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Verify" onAction="#onGoVerifyTab" />
+        </HBox>
+    </top>
+    <center>
+        <GridPane hgap="16" vgap="12" styleClass="content" >
+            <columnConstraints>
+                <ColumnConstraints percentWidth="35"/>
+                <ColumnConstraints percentWidth="65"/>
+            </columnConstraints>
+
+            <Label text="Full Name" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfFullName" promptText="Jane Doe" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Date of Birth" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfDob" promptText="YYYY-MM-DD (optional)" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Email" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfEmail" promptText="jane@example.com (optional)" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Phone" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfPhone" promptText="+44 ..." GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Validity" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <HBox spacing="10" GridPane.rowIndex="4" GridPane.columnIndex="1">
+                <Slider fx:id="slYears" min="1" max="10" value="3" blockIncrement="1" majorTickUnit="1" snapToTicks="true" />
+                <Label fx:id="lbYears" text="3 years"/>
+            </HBox>
+
+            <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                <Button text="Choose Output..." onAction="#onChooseOutput"/>
+                <Button text="Issue Digital ID" onAction="#onIssue" styleClass="primary"/>
+                <Button text="Copy JSON" onAction="#onCopyJson"/>
+            </HBox>
+
+            <Label text="Preview" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <ImageView fx:id="qrPreview" fitWidth="480" fitHeight="320" preserveRatio="true" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+            <Label text="ID JSON" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <TextArea fx:id="taJson" prefRowCount="10" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+        </GridPane>
+    </center>
+    <bottom>
+        <HBox spacing="8" styleClass="statusbar">
+            <Label text="Status:"/>
+            <Label fx:id="lbStatus" text="Ready."/>
+        </HBox>
+    </bottom>
+</BorderPane>

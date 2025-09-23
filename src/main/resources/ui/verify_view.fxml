@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.oogle.digitalid.ui.VerifyController"
+            prefWidth="960" prefHeight="640" styleClass="root">
+    <top>
+        <HBox spacing="12" styleClass="topbar">
+            <Label text="Verify Digital ID" styleClass="title"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Back" onAction="#onBack" />
+        </HBox>
+    </top>
+    <center>
+        <GridPane hgap="16" vgap="12" styleClass="content">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="25"/>
+                <ColumnConstraints percentWidth="75"/>
+            </columnConstraints>
+
+            <Label text="Digital ID file" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <HBox spacing="8" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                <TextField fx:id="tfPath" HBox.hgrow="ALWAYS" promptText=".../UUID.did.json"/>
+                <Button text="Browse..." onAction="#onBrowse"/>
+            </HBox>
+
+            <Button text="Verify" onAction="#onVerify" styleClass="primary" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Result" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <Label fx:id="lbResult" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        </GridPane>
+    </center>
+</BorderPane>

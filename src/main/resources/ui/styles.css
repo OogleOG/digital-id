@@ -1,0 +1,55 @@
+.root {
+    -fx-font-family: "Segoe UI", "Inter", "Roboto", "Arial";
+    -fx-base: #101218;
+    -fx-background: #0e1117;
+    -fx-control-inner-background: #161a22;
+    -fx-text-fill: #e6e7ea;
+}
+
+.topbar {
+    -fx-padding: 16 20 16 20;
+    -fx-background-color: linear-gradient(to bottom, #141824, #10131c);
+    -fx-alignment: CENTER_LEFT;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0.2, 0, 6);
+}
+
+.title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.content {
+    -fx-padding: 20;
+}
+
+.statusbar {
+    -fx-padding: 10 20 10 20;
+    -fx-background-color: #0e1117;
+    -fx-border-color: #242a36;
+    -fx-border-width: 1 0 0 0;
+}
+
+.button.primary {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+}
+.button.primary:hover {
+    -fx-background-color: #2563eb;
+}
+
+.label, .text, .text-field, .text-area {
+    -fx-text-fill: #e6e7ea;
+}
+
+.text-field, .text-area, .slider {
+    -fx-background-color: #0f1320, #0f1320, #0f1320;
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #283044;
+}
+
+.text-area {
+    -fx-highlight-fill: #2563eb;
+}
